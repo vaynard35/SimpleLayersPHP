@@ -11,6 +11,8 @@ error_reporting(E_ALL);
 $layers=new SimpleLayers();
 
 $layers->addLayer("coast-1564063_640.jpg","Coast");
+$layers->addLayer("coast-1564063_640.jpg","Coast"); //giving same name many times will give new layers "Coast-2","Coast-3" so on
+
 
 $layers->addLayer("circle.png","Circle",0,0,79,1); //we move image by [79,1]pixels from upper left corner
 
@@ -43,4 +45,7 @@ $layers3->addLayer("circle.png","Circle");
 $layers3->addLayer("rectangle.png","Rectangle",200,100,100,150);
 $layers3->combineLayers();
 $layers3->saveAsImg("outputImages/output3.png");
+
+
+
 

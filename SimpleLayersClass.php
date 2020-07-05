@@ -18,11 +18,18 @@ $this->output=$output;
 
 public function addLayer($path,$layerName,$width=0,$height=0,$deltaX=0,$deltaY=0){
 
+    //check if layer name existst. If so , add counter to distinguish layers
 
+    $sufix="";
 
-	$this->layers[$layerName]=array(
+    $l=2;
+    while(isset($this->layers[$layerName.$sufix])) {$sufix="-".$l;$l++;}
+
+    $newLayerName=$layerName.$sufix;
+
+	$this->layers[$newLayerName]=array(
 	"path"=>$path,
-	"layerName"=>$layerName,
+	"layerName"=>$newLayerName,
 	"width"=>$width,
 	"height"=>$height,
 	"deltaX"=>$deltaX,
