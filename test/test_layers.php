@@ -10,11 +10,11 @@ error_reporting(E_ALL);
 
 $layers=new SimpleLayers();
 
-$layers->addLayer("coast-1564063_640.jpg","Coast");
-$layers->addLayer("coast-1564063_640.jpg","Coast"); //giving same name many times will give new layers "Coast-2","Coast-3" so on
+$layers->addLayer("inputImages/coast-1564063_640.jpg","Coast");
+$layers->addLayer("inputImages/coast-1564063_640.jpg","Coast"); //giving same name many times will give new layers "Coast-2","Coast-3" so on
 
 
-$layers->addLayer("circle.png","Circle",0,0,79,1); //we move image by [79,1]pixels from upper left corner
+$layers->addLayer("inputImages/circle.png","Circle",0,0,79,1); //we move image by [79,1]pixels from upper left corner
 
 
 $layers->printLayers(); //method shows us layers we have
@@ -29,7 +29,7 @@ $layers->saveAsImg("outputImages/output1.jpg");
 
 $layers2=new SimpleLayers($layers->getOutput());
 
-$layers2->addLayer("rectangle.png","Rectangle",0,0,0,162);
+$layers2->addLayer("inputImages/rectangle.png","Rectangle",0,0,0,162);
 
 $layers2->combineLayers();
 
@@ -41,8 +41,8 @@ $layers2->saveAsImg("outputImages/output2.jpg");
 
 $layers3=new SimpleLayers();
 //$layers3->addLayer("coast-1564063_640.jpg","Coast");
-$layers3->addLayer("circle.png","Circle");
-$layers3->addLayer("rectangle.png","Rectangle",200,100,100,150);
+$layers3->addLayer("inputImages/circle.png","Circle");
+$layers3->addLayer("inputImages/rectangle.png","Rectangle",200,100,100,150);
 $layers3->combineLayers();
 $layers3->saveAsImg("outputImages/output3.png");
 
